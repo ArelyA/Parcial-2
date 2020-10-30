@@ -1,0 +1,23 @@
+use web-store
+
+db.createCollection('products')
+
+show collections
+
+db.products.insert({name: "shoes", cost: 199.99, stock: 10, date_added: Date()})
+
+db.products.find()
+
+db.products.insert({name: "sun-glasses", cost: 500, stock: 2})
+
+db.products.find().pretty()
+
+db.products.update({name: "sun-glasses"}, {$set: {stock: 20}})
+
+db.products.find({name: "sun-glasses"}).pretty()
+
+db.products.remove({name: "shoes"})
+
+db.products.find().pretty()
+
+db.dropDatabase()
